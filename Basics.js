@@ -1,11 +1,17 @@
 $(document).ready(function(){
   
-  $("#reverse").click(function() {
-    var string = document.getElementById("alg-1-input").value.split("").reverse().join("");
-    //alert(string);
-    document.getElementById("alg-1-output").innerHTML=string;
-    });
+  $("alg-1-input").keyup(function(event){
+    if(event.keyCode == 13) {
+      $("#reverse").click();
 
+      /*(function() {
+      var string = document.getElementById("alg-1-input").value.split("").reverse().join("");
+      //alert(string);
+      document.getElementById("alg-1-output").innerHTML=string;
+      }); */
+    }
+ });
+/*
   $("#factorialize").click(function() {
     var factorial = 1;
     var num = $("#alg-2-input").val();
@@ -25,4 +31,11 @@ $(document).ready(function(){
     }
   });
 
+});
+
+
+$("#id_of_textbox").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#id_of_button").click();
+    }*/
 });
