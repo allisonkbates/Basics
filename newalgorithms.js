@@ -1,10 +1,17 @@
 function diffArray(arr1, arr2) {
+ 	var indexnone1 = [];
+ 	var indexnone2 = [];
 	for (var i =0; i<arr1.length; i++) {
-		var index = arr1[i].indexOf(arr2[i]);
-		var index1 = [];
-		index1.push();
+		var index1 = arr2.indexOf(arr1[i]);
+		indexnone1.push(index1);
 	}
-return index1;
+
+	for (var j=0; j<arr2.length; j++) {
+		var index2 = arr1.indexOf(arr2[i]);
+		indexnone2.push(index2);
+	}
+
+	
 
 	// loop through first array
 	//find index of each value in 2nd array
