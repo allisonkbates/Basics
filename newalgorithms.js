@@ -25,6 +25,11 @@ return indexnone1;
 diffArray([1,2,3,4,5], [1,2,3,6]);
 
 
+
+
+
+
+
 	/*function getIndex1(item, index) {
 		console.log(item + index);
 	}
