@@ -1,5 +1,12 @@
 function diffArray(arr1, arr2) {
- 	var indexnone1 = [];
+ 
+ arr1.forEach(function(indexes){
+	return arr2.indexOf(indexes);
+             });
+
+
+
+ /*	var indexnone1 = [];
  	var indexnone2 = [];
 	for (var i =0; i<arr1.length; i++) {
 		var index1 = arr2.indexOf(arr1[i]);
@@ -10,7 +17,7 @@ function diffArray(arr1, arr2) {
 		var index2 = arr1.indexOf(arr2[i]);
 		indexnone2.push(index2);
 	}
-
+*/
 	
 
 	// loop through first array
@@ -20,6 +27,7 @@ function diffArray(arr1, arr2) {
 	//loop through 2nd array
 	//find index of value in first array
 	//take those that are not indexable and add them to other array
+	
 
 
 
