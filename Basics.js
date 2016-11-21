@@ -1,7 +1,7 @@
 function reverseString(){
-	var string = (document.getElementById("alg-1-input")).value.split("").reverse().join("");
-	document.getElementById("alg-1-output").innerHTML = string;
-	}
+  var string = (document.getElementById("alg-1-input")).value.split("").reverse().join("");
+  document.getElementById("alg-1-output").innerHTML = string;
+  }
 function factorialize() {
   var factorial = 1;
   var num = document.getElementById("alg-2-input").value;
