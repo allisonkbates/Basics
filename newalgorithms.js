@@ -24,7 +24,22 @@ return indexnone1;
 
 diffArray([1,2,3,4,5], [1,2,3,6]);
 
+function translatePigLatin(str) {  
+  var vowel;
+  for (var i=0; i<str.length; i++) {
+    if (str.indexOf("a") === 0 || str.indexOf("e") === 0 || str.indexOf("i") === 0 ||         str.indexOf("o") === 0 || str.indexOf("u") === 0) {
+    return str + "way";
+      }      
+    if (str.charAt(i) === "a" || str.charAt(i) ==="e" || str.charAt(i) === "i" || str.charAt(i) === "o" || str.charAt(i) === "u") {
+    vowel = i;
+    var firstHalf = str.substr(vowel);
+    var secondHalf = str.substr(0, vowel) + "ay";
+    return firstHalf + secondHalf;
+    }
+  }
+}
 
+translatePigLatin("alifornia");
 
 
 
