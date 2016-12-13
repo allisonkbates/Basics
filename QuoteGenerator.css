@@ -1,11 +1,64 @@
-.quote-container {
-  background-color: #ddd;
-  color: #111;
-  height: 300px;
-  width: 800px;
-  
+body {
+  background: url(http://ilovehdwallpapers.com/walls/railroad-looking-amazing-in-sunset-colorful-evening-photography-desktop-image-HD.jpg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #eee;
 }
 
-p {
-color: #000;
+.container {
+  background-color: rgba(0,0,0,.5);
+  height: 500px;
+  width: 600px;
+  margin-top: 75px;
+  padding: 0px;
 }
+
+h1 {
+  text-transform: uppercase;
+  margin: 30px 65px;
+}
+
+.quote-container {
+  padding: 0px 20px;
+  display:flex;
+  justify-content: center;
+}
+
+.quote-text {
+  height: 200px;
+  width: 450px;
+  margin: 0px 75px;
+  padding: 0px;
+  font-size: 24px;
+}
+
+button {
+  width: 50px;
+  height: 500px;
+  background-color: #234566;
+  margin-top: 75px;
+  border: none;
+  outline: none;
+}  
+
+.new {
+  transform: rotate(-90deg);
+  -webkit-transform:rotate(90deg);
+  font-size: 24px;
+  color: #efefef;
+  margin: -150px;
+  padding: 0px;
+}
+
+button:active {
+  border: none;
+  focus: none;
+}
+
+.tweet {
+	margin:0;
+	padding:0;
+}
+
