@@ -5,7 +5,7 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 
 */
 
-"http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/37.776289,-122.395234.json"
+//"http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/37.776289,-122.395234.json"
 //lat&long should be added based on location, then it should be retrieved from the api
 
 //follow instruction for getLocation from W3 SCHOOLS
@@ -13,7 +13,31 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 //get request for weather
 //background image based on data
 //toggle for both fahrenheit and celsius
-var apiURL;
+
+
+
+function getLocation() {
+	navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+function showPosition(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	apiURL = "http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/" + latitude + "," + longitude + ".json";
+	jQuery(document).ready(function($) {
+  $.ajax({
+  url : apiURL,
+  dataType : "json",
+  success : function(parsed_json) {
+  parsed_json = JSON.stringify(parsed_json);
+  document.getElementById("demo").innerHTML = parsed_json;
+  }
+  });
+});
+}
+
+
+/*var apiURL;
 function getLocation() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition);
@@ -27,6 +51,9 @@ function showPosition(position) {
 	apiURL = "http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/" + latitude + "," + longitude + ".json";
 	console.log(apiURL);
 }
+
+showPosition(getLocation);
+
 function getData() {
  	jQuery(document).ready(function($) {
   $.ajax({
@@ -39,5 +66,5 @@ function getData() {
   }
   });
 });
-}
+}*/
 
