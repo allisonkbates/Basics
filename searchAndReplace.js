@@ -24,3 +24,11 @@ function myReplace(str, before, after) {
 }
 
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+var wizardName = "Dan"
+var wizardsAttending = ["Andrew", "Allison", "Maria"];
+	if (wizardsAttending.indexOf(wizardName) >= 0) {
+		console.log("Yay, " + wizardName + " is attending!");
+	} else {
+		console.log("Why isn't " + wizardName + " attending??");
+	}
