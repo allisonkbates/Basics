@@ -5,7 +5,7 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 
 */
 
-//"http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/37.776289,-122.395234.json"
+//"http://api.wunderground.com/api/apikey/conditions/q/37.776289,-122.395234.json"
 //lat&long should be added based on location, then it should be retrieved from the api
 
 //follow instruction for getLocation from W3 SCHOOLS
@@ -23,18 +23,23 @@ function getLocation() {
 function showPosition(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
-	apiURL = "http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/" + latitude + "," + longitude + ".json";
+	apiURL = "http://api.wunderground.com/api/apikey/conditions/q/" + latitude + "," + longitude + ".json";
 	jQuery(document).ready(function($) {
   $.ajax({
   url : apiURL,
   dataType : "json",
   success : function(parsed_json) {
-  parsed_json = JSON.stringify(parsed_json);
-  document.getElementById("demo").innerHTML = parsed_json;
+  var temp_f = parsed_json.current_observation.temp_f;
+  var temp_c = parsed_json.current_observation.temp_c;
+  var icon = parsed_json.current_observation.icon;
+  var weatherData = parsed_json;
+  console.log(weatherData);
+  document.getElementById("demo").innerHTML = temp_f + "F" + icon;
   }
   });
 });
 }
+
 
 
 /*var apiURL;
@@ -48,7 +53,7 @@ function getLocation() {
 function showPosition(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
-	apiURL = "http://api.wunderground.com/api/ccd41eba2fc9c992/conditions/q/" + latitude + "," + longitude + ".json";
+	apiURL = "http://api.wunderground.com/api/apikey/conditions/q/" + latitude + "," + longitude + ".json";
 	console.log(apiURL);
 }
 
@@ -57,7 +62,7 @@ showPosition(getLocation);
 function getData() {
  	jQuery(document).ready(function($) {
   $.ajax({
-  url : "http://api.wunderground.com/api/ccd41eba2fc9c992/geolookup/conditions/q/IA/Cedar_Rapids.json",
+  url : "http://api.wunderground.com/api/apikey/geolookup/conditions/q/IA/Cedar_Rapids.json",
   dataType : "jsonp",
   success : function(parsed_json) {
   var location = parsed_json['location']['city'];
