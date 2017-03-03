@@ -40,7 +40,7 @@ function showPosition(position) {
 });
 }
 
-
+//changing a few other things
 
 /*var apiURL;
 function getLocation() {
