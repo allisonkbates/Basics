@@ -30,21 +30,26 @@ function showPosition(position) {
   success : function(parsed_json) {
   var temp_f = parsed_json.current_observation.temp_f;
   var temp_c = parsed_json.current_observation.temp_c;
-  var city = parsed_json.current_observation.observation_location.city;
+  var city = parsed_json.current_observation.display_location.city;
+  var state = parsed_json.current_observation.display_location.state;
   var icon = parsed_json.current_observation.icon;
   var icon_url = parsed_json.current_observation.icon_url
   var weatherData = parsed_json;
   console.log(weatherData);
-  document.getElementById("temp_f").innerHTML = temp_f + "F";
-  document.getElementById("city").innerHTML = city;
-  document.getElementById("icon").src = icon_url;
-  if (temp_f > "40") {
-    document.getElementById("demo").innerHTML = "it's warm";
+document.getElementById("temp_f").innerHTML = temp_f + "F";
+  document.getElementById("city").innerHTML = city + ", " + state;
+  if (icon = "partlycloudly") {
+    document.getElementById("icon").src = "partlycloudly.png";
+  } else {
+    document.getElementById("icon").src = icon_url;
   }
   }
   });
 });
 }
+
+
+
 
 //changing a few other things
 
