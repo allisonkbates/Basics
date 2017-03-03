@@ -15,7 +15,6 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 //toggle for both fahrenheit and celsius
 
 
-
 function getLocation() {
 	navigator.geolocation.getCurrentPosition(showPosition);
 }
@@ -23,7 +22,7 @@ function getLocation() {
 function showPosition(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
-	apiURL = "http://api.wunderground.com/api/apikey/conditions/q/" + latitude + "," + longitude + ".json";
+	apiURL = "http://api.wunderground.com/api/" + apiKey + "/conditions/q/" + latitude + "," + longitude + ".json";
 	jQuery(document).ready(function($) {
   $.ajax({
   url : apiURL,
@@ -31,10 +30,17 @@ function showPosition(position) {
   success : function(parsed_json) {
   var temp_f = parsed_json.current_observation.temp_f;
   var temp_c = parsed_json.current_observation.temp_c;
+  var city = parsed_json.current_observation.observation_location.city;
   var icon = parsed_json.current_observation.icon;
+  var icon_url = parsed_json.current_observation.icon_url
   var weatherData = parsed_json;
   console.log(weatherData);
-  document.getElementById("demo").innerHTML = temp_f + "F" + icon;
+  document.getElementById("temp_f").innerHTML = temp_f + "F";
+  document.getElementById("city").innerHTML = city;
+  document.getElementById("icon").src = icon_url;
+  if (temp_f > "40") {
+    document.getElementById("demo").innerHTML = "it's warm";
+  }
   }
   });
 });
