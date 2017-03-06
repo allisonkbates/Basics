@@ -12,7 +12,6 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 //lat & long should be added into url variable
 //get request for weather
 //background image based on data
-//toggle for both fahrenheit and celsius
 
 
 function getLocation() {
@@ -28,21 +27,36 @@ function showPosition(position) {
   url : apiURL,
   dataType : "json",
   success : function(parsed_json) {
-  var temp_f = parsed_json.current_observation.temp_f;
-  var temp_c = parsed_json.current_observation.temp_c;
+  
+  //data needed
+  var temp_f = Math.round(parsed_json.current_observation.temp_f) + "&deg F";
+  var temp_c = Math.round(parsed_json.current_observation.temp_c) + "&deg C";
   var city = parsed_json.current_observation.display_location.city;
   var state = parsed_json.current_observation.display_location.state;
   var icon = parsed_json.current_observation.icon;
-  var icon_url = parsed_json.current_observation.icon_url
+  
+  //showing all data
   var weatherData = parsed_json;
   console.log(weatherData);
-document.getElementById("temp_f").innerHTML = temp_f + "F";
+ 
+  //shows temperatures
+  document.getElementById("temp_f").innerHTML = temp_f;
   document.getElementById("city").innerHTML = city + ", " + state;
-  if (icon = "partlycloudly") {
-    document.getElementById("icon").src = "partlycloudly.png";
+  document.getElementById("icon").innerHTML = icon;
+  
+  //image rules
+  if (icon == "partlycloudy") {
+    document.getElementById("png").src = "partlycloudy.png";
+  } else if (icon === "sunny") {
+    document.getElementById("png").src = "sunny.png";
+  } else if (icon === "rainy") {
+   document.getElementById("png").src = "rainy.png";
+  } else if (icon ==="cloudy") {
+    document.getElementById("png").src = "cloudy.png";
   } else {
-    document.getElementById("icon").src = icon_url;
+    console.log("you suck");
   }
+
   }
   });
 });
