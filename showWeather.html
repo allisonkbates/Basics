@@ -2,21 +2,19 @@
 <head>
 	<meta charset="utf-8">
  	<link rel="stylesheet" type="text/css" href="showWeather.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<script src="showWeather.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 </head>
-<body onload = "getLocation()">
-	<h1>Weather App</h1>
-<div class="container">
-  <h3 id= "city"></h3>
-  <h2 id= "temp_f"></h2>
-  <h2 id="icon"></h2>
-  <label class="switch">
-  <input type="checkbox">
-    <div class="slider round"></div>
-</label>
-  <img id="png" src="#" width="50" height="50">
-</div>
-	<p id="demo"></p>
+<body onload = "getLocation()"> <!--change this to a different way-->
+  <header>
+    <h1>Weather App</h1>  
+  </header>	
+  <div class="container">
+    <h3 id= "city"></h3>
+    <h2 id= "temp_f"></h2>
+    <h2 id="icon"></h2>
+    <img id="png" src="#" width="200" height="200">
+  </div>
 </body>
 </html>

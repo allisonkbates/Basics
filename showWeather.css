@@ -1,6 +1,18 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
 .container {
   height: 300px;
   width: 500px;
+  margin: 0;
+  padding: 0;
   background-color: #f3f3f3;
 }
 
