@@ -12,7 +12,7 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 //lat & long should be added into url variable
 //get request for weather
 //background image based on data
-
+var apiKey = config.API_KEY;
 
 function getLocation() {
 	navigator.geolocation.getCurrentPosition(showPosition);
