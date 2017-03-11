@@ -12,7 +12,7 @@ User Story: I can push a button to toggle between Fahrenheit and Celsius. (use e
 //lat & long should be added into url variable
 //get request for weather
 //background image based on data
-var apiKey = config.API_KEY;
+var apiKey = config.WEATHER_API_KEY;
 
 function getLocation() {
 	navigator.geolocation.getCurrentPosition(showPosition);
@@ -22,19 +22,19 @@ function showPosition(position) {
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
 	apiURL = "http://api.wunderground.com/api/" + apiKey + "/conditions/q/" + latitude + "," + longitude + ".json";
-	jQuery(document).ready(function($) {
-  $.ajax({
-  url : apiURL,
-  dataType : "json",
-  success : function(parsed_json) {
-  
+jQuery(document).ready(function($) {
+$.ajax({
+url : apiURL,
+dataType : "json",
+success : function(parsed_json) {
+  console.log(typeof parsed_json);
   //data needed
   var temp_f = Math.round(parsed_json.current_observation.temp_f) + "&deg F";
   var temp_c = Math.round(parsed_json.current_observation.temp_c) + "&deg C";
   var city = parsed_json.current_observation.display_location.city;
   var state = parsed_json.current_observation.display_location.state;
   var icon = parsed_json.current_observation.icon;
-  
+  console.log(temp_f);  
   //showing all data
   var weatherData = parsed_json;
   console.log(weatherData);
