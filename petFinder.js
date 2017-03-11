@@ -10,8 +10,8 @@ jQuery(document).ready(function($) {
   	var dogSex = data.petfinder.pet.sex.$t;
   	var dogBreed = data.petfinder.pet.breeds.breed.$t;
 		var dogDescription = data.petfinder.pet.description.$t;
-		var dogPhoto = data.petfinder.pet.media.photos.photo[0].$t;
-  	document.getElementById("name").innerHTML = "Name: " + 	dogName;
+		var dogPhoto = data.petfinder.pet.media.photos.photo[2].$t;
+  	document.getElementById("name").innerHTML = dogName;
   	document.getElementById("age").innerHTML = dogAge;
   	document.getElementById("sex").innerHTML = dogSex;
   	document.getElementById("breed").innerHTML = dogBreed;
