@@ -1,6 +1,6 @@
 window.onload = function () { 
   
-  const search = document.querySelector(".search");
+  var search = document.querySelector(".search");
 
   function getUrl() {
     var input = document.getElementById("input").value;
@@ -17,47 +17,17 @@ window.onload = function () {
         console.log(queryArray);
 
         queryArray.map(function (query) {
-          var results = document.getElementById('results'); //results
-          var li = document.createElement('li');
-          var textNode = document.createTextNode(query.title);
-          li.appendChild(textNode);
-          results.appendChild(li);
-          var ul = document.createElement('ul');
-          var li2 = document.createElement('div');
-          var div2 = li2.write(query.snippet);
-          results.appendChild(li2);
-          /*
-          var textNode2 = document.createTextNode(query.snippet.;
-          li2.appendChild(textNode2);
-          results.appendChild(li2);*/
-
-        });
-
-        /*queryArray.forEach(function (query) {
-          titleArray.push(query.title);
-          snippetArray.push(query.snippet);
-        });
-
-        titleArray.forEach(function (title) {
-          var results = document.getElementById('results'); //results
-          var li = document.createElement('li');
-          var textNode = document.createTextNode(title);
-          li.appendChild(textNode);
-          results.appendChild(li);
-
-
-
-        });
-         snippetArray.forEach(function (snippet) {
-          var ul = document.createElement('ul');
-          results.appendChild(ul);
-          var li2 = document.createElement('li');
-          var snippetNode = document.createTextNode(snippet);
-          li2.appendChild(snippetNode);
+          var results = document.getElementById('results');
+          var h1 = document.createElement('h1');
+          var headerText = document.createTextNode(query.title);
+          h1.appendChild(headerText);
+          results.appendChild(h1);
           
-          ul.appendChild(li2);
-        });   */ 
-
+          var divSnippet = document.createElement('div');
+          snippet = query.snippet;
+          divSnippet.innerHTML = snippet;
+          results.appendChild(divSnippet);
+        });
     })
       .done(function() {
         console.log("data loaded successfully!");
@@ -72,11 +42,5 @@ window.onload = function () {
     getData();
   }
 
-  function showResults() {
-
-  }
-
   search.addEventListener("submit", searchWiki);
 }
-
-//figure out how to get fa-search into the html via js??
