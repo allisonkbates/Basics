@@ -22,14 +22,23 @@ h1 {
 }
 
 .submit {
+	background: url("noun_929173_cc.png") no-repeat center center;
+	color:black;
+	height: 50px;
+	width: 50px;
 }
 
-.fa {
+.fa-search {
+	display
+}
+
+.fa-random {
 	background-color: #3596ab;
 	color: white;
 	height: 20px;
 	width: 40px	;
 }
+
 
 /*
 button {
