@@ -33,10 +33,11 @@ h1 {
 }
 
 .fa-random {
-	background-color: #3596ab;
-	color: white;
-	height: 20px;
-	width: 40px	;
+	background-color: #ffffff;
+	color: #3596ab;
+	height: 50px;
+	width: 100px;
+	text-align:center;
 }
 
 

@@ -10,23 +10,7 @@ $(document).ready (function() {
   function getData() {
     $.getJSON(getUrl(), function (data) {
         var queryArray = data.query.search;
-        var titleArray = [];
-        var snippetArray = [];
-        
-        console.log(queryArray);
-
-        queryArray.map(function (query) {
-          var results = document.getElementById('results');
-          var h1 = document.createElement('h1');
-          var headerText = document.createTextNode(query.title);
-          h1.appendChild(headerText);
-          results.appendChild(h1);
-          
-          var divSnippet = document.createElement('div');
-          snippet = query.snippet;
-          divSnippet.innerHTML = snippet;
-          results.appendChild(divSnippet);
-        });
+        return queryArray;
     })
       .done(function() {
         console.log("data loaded successfully!");
@@ -42,6 +26,10 @@ $(document).ready (function() {
       results.removeChild(results.lastChild);
     }
     getData();
+  }
+
+  function showResults() {
+    
   }
 
   search.addEventListener("submit", searchWiki);
