@@ -8,65 +8,54 @@ body {
 
 h1 {
 	text-align: center;
+	margin-bottom: 10px;
+	font-size: 32px;
+}
+
+header {
 	margin-bottom: 50px;
+	font-size: 48px;
+	text-align: center;
+}
+
+div {
+	max-width: 700px;
+}
+
+form {
+	display: flex;
+	justify-content:center;
 }
 
 .input {
 	outline: none;
 	border: none;
 	border-bottom: 1px solid #ffffff;
-	border-radius: .5px;
-	font-size: 20px;
+	font-size: 24px;
 	background-color: #3596ab;
 	color: #ffffff;
 }
 
-.submit {
-	background: url("noun_929173_cc.png") no-repeat center center;
-	color:black;
-	height: 50px;
-	width: 50px;
-}
-
-.fa-search {
-	display
-}
-
-.fa-random {
-	background-color: #ffffff;
-	color: #3596ab;
-	height: 50px;
-	width: 100px;
-	text-align:center;
-}
-
-
-/*
-button {
+.submit, button{
 	border: none;
-	background-color: #ffffff;
 	color: #3596ab;
-	width: 50px;
-	outline: none;
-	margin: 5px;
-	border-radius: 5px;
+	border-radius: 1px;
+	background-color: #ffffff;
+	font-size: 18px;
+	outline:none;
+	border-right: #3596ab 1px solid;
 }
 
-i {
-	background-color: #ffffff;
-	color: #3596ab;
-}
-
-button:hover {
-	border: none;
+.submit:hover, button:hover{
 	background-color: #e5e5e5;
-	color: #3596ab;
-	width: 50px;
-	outline: none;
-	margin: 5px;
-	border-radius: 5px;
 }
-*/
+
+
+a {
+	text-decoration: none;
+	color: #3596ab;
+}
+
 li {
 	color: white;
 }
