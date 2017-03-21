@@ -10,3 +10,25 @@ Internal Tools
 Intl Teams
 Revenue driven decisions
 Results on complex products- IP Targeting, Reporting Dashboards
+
+
+Payments and internal tools -
+
+In my current role as a product manager, I am constantly gathering & analyzing data to make key decisions on defining & prioritizing the product roadmap. 
+
+With a background in Ad Tech, I have a deep understanding of the challenges publishers face as they strive to achieve their revenue numbers as well as delivering content to their audiences. While the monetization strategy is not ads, Meetup faces the constant tension between user engagement & monetization. While sometimes, these monetization and user engagment go hand in hand, they can also be at odds. Often, as a product manager, we are tasked with balancing both.
+
+
+
+
+
+
+
+Previously, as a Sales Operations Specialist, I streamlined our reporting processes, retrieving & combining data from 20+ sources (from Ad Networks to Google Analytics to Internal Platforms). With streamlined reporting, I was able to provide insights into our customer churn rates, sales team performance as well as insights on our owned & operated sites using Google Analytics & Comscore.
+
+
+Girls who Code
+
+I read an article today which was, in short, imploring designers and engineers to champion their ethics in their day job, not just the non-profit that they work for on the side (written in light of some of the uber nonsense). The article moved me to the point that I realized, I too, wanted to do something a little more meaningful than ad-tech. I want to be part of building technology that is beneficial, not the opposite. thought of Girls Who Code and saw this role that seemed to be a good fit.
+
+
