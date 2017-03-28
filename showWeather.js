@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 
 var apiKey = config.WEATHER_API_KEY;
 
@@ -15,29 +15,10 @@ function showPosition(position) {
     url : apiURL,
     dataType : "jsonp",
     success : function(data) {
-      var appTime = new Date().getTime();
-      data.myTime = appTime;
-      var jsonStore = JSON.stringify(data);
-      localStorage.setItem('bulk_json', jsonStore);
-      console.log(data);
-      //showStuff(data);
+     showStuff(data);
     } 
   });
 }
-if (localStorage.getItem('bulk_json') === null) {
-  getLocation();
-} else {
-  var hours = 1000 * 60 * 60;
-  var now = new Date().getTime().toString();
-  var parsed = JSON.parse(localStorage.getItem('bulk_json'));
-  if (now > parsed['myTime'] + (2 * hours)) {
-    getLocation();
-} else {
-  showStuff(parsed);
-}
-
-}
-
 
 function showStuff(parsed) {
  //data needed
@@ -46,11 +27,8 @@ function showStuff(parsed) {
   var city = parsed.current_observation.display_location.city;
   var state = parsed.current_observation.display_location.state;
   var icon = parsed.current_observation.icon;
-  console.log(temp_f);  
-  //showing all data
-  var weatherData = parsed;
-  console.log(weatherData);
- 
+  console.log(temp_f); 
+  
   //shows temperatures
   document.getElementById("temp_f").innerHTML = temp_f;
   document.getElementById("city").innerHTML = city + ", " + state;
@@ -68,7 +46,8 @@ function showStuff(parsed) {
   } else {
     document.getElementById("png").src = "cloudy.png";
   }
+}
 
-  }
+$(document).ready(function() {
   getLocation();
-});
+  });
